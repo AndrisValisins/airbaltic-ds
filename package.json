@@ -1,21 +1,33 @@
 {
   "name": "bt-components",
   "description": "Testing npm package deployment",
-  "version": "0.1.4",
+  "version": "0.1.5",
+  "main": "dist/library.js",
+  "module": "dist/library.mjs",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview --port 4173",
+    "build": "rollup -c",
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:4173/ 'cypress open --e2e'",
     "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:4173/ 'cypress run --e2e'",
-    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "sass": "^1.52.3",
+    "tslib": "^2.4.0",
+    "vue": "^3.2.36"
+  },
+  "peerDependencies": {
     "vue": "^3.2.36"
   },
   "devDependencies": {
@@ -43,11 +55,13 @@
     "eslint-plugin-storybook": "^0.5.12",
     "eslint-plugin-vue": "^9.0.0",
     "jsdom": "^19.0.0",
-    "lerna": "^5.1.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
+    "rollup": "^2.75.6",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0",
     "start-server-and-test": "^1.14.0",
-    "typescript": "~4.7.2",
+    "typescript": "^4.7.4",
     "vite": "^2.9.9",
     "vitest": "^0.13.0",
     "vue-loader": "^16.8.3",
