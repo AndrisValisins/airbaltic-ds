@@ -1,11 +1,10 @@
 import { describe, it, expect } from "vitest";
-
 import { mount } from "@vue/test-utils";
-import BaseButton from "./BaseButton.vue";
+import BtButton from "./BtButton.vue";
 
 describe("BaseButton", () => {
   it("renders properly", () => {
-    const wrapper = mount(BaseButton, {
+    const wrapper = mount(BtButton, {
       slots: {
         default: "Primary button",
       },

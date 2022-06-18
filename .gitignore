@@ -29,4 +29,3 @@ coverage
 
 storybook-static
 npm-debug.log*
-lerna-debug.log*

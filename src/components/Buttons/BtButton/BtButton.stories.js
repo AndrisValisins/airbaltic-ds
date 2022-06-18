@@ -1,8 +1,8 @@
-import BaseButton from "./BaseButton.vue";
+import BtButton from "./BtButton.vue";
 
 export default {
-  title: "Components/Buttons",
-  component: BaseButton,
+  title: "Atoms/Buttons",
+  component: BtButton,
   argTypes: {
     variant: {
       control: { type: "select" },
@@ -13,15 +13,15 @@ export default {
 };
 
 const Template = (args) => ({
-  components: { BaseButton },
+  components: { BtButton },
   setup() {
     return { args };
   },
-  template: `<base-button v-bind="args">
+  template: `<bt-button v-bind="args">
     <template #iconBefore>{{ args.iconBefore }}</template>
     <template #default>{{ args.default }}</template>
     <template #iconAfter>{{ args.iconAfter }}</template>
-  </base-button>`,
+  </bt-button>`,
 });
 
 export const Primary = Template.bind({});
@@ -57,4 +57,11 @@ WithBothIcons.args = {
   variant: "primary",
   iconAfter: "A",
   iconBefore: "A",
+};
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  default: "Full width",
+  variant: "primary",
+  full: true,
 };
