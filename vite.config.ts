@@ -9,6 +9,10 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     coverage: {
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
       reporter: ["json", "html"],
     },
   },

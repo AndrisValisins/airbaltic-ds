@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`BtTypography > Matches to snapshot 1`] = `
+<p>
+  
+  Body text
+  
+</p>
+`;

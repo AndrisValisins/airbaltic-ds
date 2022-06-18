@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`BaseButton > Matches to snapshot 1`] = `
+<button
+  class="btn primary"
+>
+  
+  
+  
+  Primary button
+  
+  
+  
+</button>
+`;

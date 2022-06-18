@@ -12,9 +12,9 @@ export default defineComponent({
   props: {
     variant: {
       type: String,
-      default: "body",
+      default: "p",
       validator(value: string) {
-        return ["h1", "h2", "h3", "h4", "h5", "h6", "body"].includes(value);
+        return ["h1", "h2", "h3", "h4", "h5", "h6", "p"].includes(value);
       },
     },
   },
