@@ -1,6 +1,7 @@
 {
-  "name": "airbaltic-ds",
-  "version": "0.1.0",
+  "name": "bt-components",
+  "description": "Testing npm package deployment",
+  "version": "0.1.3",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
