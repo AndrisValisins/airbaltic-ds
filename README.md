@@ -79,7 +79,7 @@ import in main.ts
 
 ```sh
 import BTComponents from 'bt-components'
-import "bt-components/dist/style.css"
+import "bt-components/styles.css"
 ...
 app.use(BTComponents)
 
