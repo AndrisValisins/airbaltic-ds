@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from "url";
-
 import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
-import path from "path";
+import typescript2 from "rollup-plugin-typescript2";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,10 +16,12 @@ export default defineConfig({
     },
   },
   build: {
+    cssCodeSplit: false,
     lib: {
-      entry: path.resolve(__dirname, "src/index.js"),
-      name: "bt-components",
-      fileName: (format) => `bt-components.${format}.js`,
+      entry: "./src/BtComponents.ts",
+      formats: ["es", "cjs"],
+      name: "BtComponents",
+      fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
       external: ["vue"],
@@ -31,7 +32,21 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    typescript2({
+      check: false,
+      include: ["src/**/*.vue"],
+      tsconfigOverride: {
+        compilerOptions: {
+          sourceMap: true,
+          declaration: true,
+          declarationMap: true,
+        },
+        exclude: ["vite.config.ts"],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

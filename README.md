@@ -1,3 +1,7 @@
+<span style="color:red;font-size:2em;line-heigt:2em">
+# VIP and not production ready
+</span>
+
 # BT Components
 
 Component library test project for npm

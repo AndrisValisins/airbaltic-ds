@@ -6,23 +6,18 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "BtButton",
-  props: {
-    variant: {
-      type: String,
-      default: "primary",
-      validator(value: string) {
-        return ["primary", "secondary"].includes(value);
-      },
+<script lang="ts" setup>
+defineProps({
+  variant: {
+    type: String,
+    default: "primary",
+    validator(value: string) {
+      return ["primary", "secondary"].includes(value);
     },
-    full: {
-      type: Boolean,
-      default: false,
-    },
+  },
+  full: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
